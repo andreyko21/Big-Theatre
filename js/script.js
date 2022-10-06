@@ -65,10 +65,10 @@ if(iconMenu2){
   const menuHeader = document.querySelector('.header');
     const menuBlocks = document.querySelector('.menu-blocks');
     iconMenu2.addEventListener("click", function(e){
-        document.body.classList.toggle('lock');
-        iconMenu2.classList.toggle('active');
-        menuBlocks.classList.toggle('active');
-        menuHeader.classList.toggle('active');
+        document.body.classList.remove('lock');
+        iconMenu2.classList.remove('active');
+        menuBlocks.classList.remove('active');
+        menuHeader.classList.remove('active');
     })  
 }
 
