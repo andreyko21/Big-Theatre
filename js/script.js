@@ -50,12 +50,28 @@ var swiper1 = new Swiper(".swiper", {
   },
   });
 
-  const iconMenu = document.querySelector('.menu-blocks');
+  const iconMenu = document.querySelector('.burger-menu');
 if(iconMenu){
     const menuHeader = document.querySelector('.header');
+    const menuBlocks = document.querySelector('.menu-blocks');
     iconMenu.addEventListener("click", function(e){
         document.body.classList.toggle('lock');
         iconMenu.classList.toggle('active');
+        menuBlocks.classList.toggle('active');
         menuHeader.classList.toggle('active');
     })
 }
+
+var header = $('.header'),
+		scrollPrev = 0;
+
+$(window).scroll(function() {
+	var scrolled = $(window).scrollTop();
+ 
+	if ( scrolled > 100 && scrolled > scrollPrev ) {
+		header.addClass('out');
+	} else {
+		header.removeClass('out');
+	}
+	scrollPrev = scrolled;
+});
